@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "An application that takes in orders from customers and depletes stock from the store's inventory using MySQL and Node.JS.",
+  "main": "bamazoncustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldowers/Bamazon.git"
+  },
+  "author": "Lori Dowers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ldowers/Bamazon/issues"
+  },
+  "homepage": "https://github.com/ldowers/Bamazon#readme",
+  "dependencies": {
+    "mysql": "^2.12.0",
+    "prompt": "^1.0.0"
+  }
+}
