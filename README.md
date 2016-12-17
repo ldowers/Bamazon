@@ -4,4 +4,4 @@ Bamazon is a command line interface application that takes in orders from custom
 
 ### Video Link
 
-[Demonstration Video](https://youtube/qMbCiVYQLCU)
+[Demonstration Video](https://www.youtube.com/watch?v=oWMAhTUHMFw&list=PLgJ8UgkiorCncqIRVifiwiP7VoMpcCq0V&index=2)
