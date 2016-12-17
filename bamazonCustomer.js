@@ -99,6 +99,8 @@ var buyItem = function (item_id, quantity) {
             // Check if quantity selected is available
             if (parseInt(chosenItem.stock_quantity) < parseInt(quantity)) {
                 console.log("Insufficient quantity!\n");
+
+                anotherItem();
             }
             else {
                 query = "UPDATE products SET ? WHERE ?";
@@ -117,15 +119,41 @@ var buyItem = function (item_id, quantity) {
 
                     console.log("You purchased " + quantity + " " + chosenItem.product_name + ".");
                     console.log("Total cost of your purchase: \$" + totalCost + "\n");
+
+                    anotherItem();
                 });
             }
         }
         else {
             // Item ID entered was not found
             console.log("Not a valid ID\n");
+            anotherItem();
         }
+    });
+};
 
-        displayAllItems();
+// Prompt user to see if they want to buy another item
+var anotherItem = function () {
+    prompt.message = '';
+    prompt.start();
+
+    var property = {
+        name: 'yesno',
+        message: 'Do you want to buy another item?',
+        validator: /y[es]*|n[o]?/,
+        warning: 'Must respond yes or no',
+        default: 'no'
+    };
+
+    prompt.get(property, function (err, result) {
+        if (err) throw err;
+
+        if (result.yesno === "y" || result.yesno === "yes") {
+            displayAllItems();
+        }
+        else {
+            connection.end();
+        }
     });
 };
 
