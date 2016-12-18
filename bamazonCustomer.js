@@ -12,16 +12,11 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
-// Connect to MySQL Database
+// Connect to MySQL Database and call function to display all items
 connection.connect(function (err) {
     if (err) throw err;
-    // console.log("connected as id " + connection.threadId);
-});
-
-// Start application
-var start = function () {
     displayAllItems();
-};
+});
 
 // Display all items available for sale
 var displayAllItems = function () {
@@ -156,5 +151,3 @@ var anotherItem = function () {
         }
     });
 };
-
-start();
